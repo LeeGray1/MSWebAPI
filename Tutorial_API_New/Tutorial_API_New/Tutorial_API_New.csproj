@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ConvertXml2HtmlController.cs" />
     <Compile Include="Controllers\FileApiController.cs" />
     <Compile Include="Controllers\FillLanguagesController.cs" />
     <Compile Include="Controllers\TranslateController.cs" />
