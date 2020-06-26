@@ -87,8 +87,6 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FileApiController.cs" />
-    <Compile Include="Controllers\XmlFileController.cs" />
-    <Compile Include="Controllers\XsltFileController.cs" />
     <Compile Include="Controllers\TranslateController.cs" />
     <Compile Include="Models\FileSave.cs" />
     <Compile Include="Global.asax.cs">
@@ -109,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\LeeGray1\MSTranslator\LanguageService\LanguageService.csproj">
+      <Project>{b7690533-0ecd-4f24-a88a-be1ab4efe8fe}</Project>
+      <Name>LanguageService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -16,11 +16,7 @@ namespace Tutorial_API_New.Controllers
         const string blobConnectionString = "DefaultEndpointsProtocol=https;AccountName=mstranslation;AccountKey=DhlfSrT66vg/I5CwpD0WrpeviWp5jrv/eyPaSTt7Pe8I0rv1PJnD3j8I7gGyc8oP0Jxs1+OpaL0U8Ku7kjFlFQ==;EndpointSuffix=core.windows.net";
         const string containerName = "xsltstorage";
         // GET: api/Language
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
+       
         // GET: api/Language/5
         //public async Task<string> Post(string word)
         //{
@@ -63,7 +59,6 @@ namespace Tutorial_API_New.Controllers
             // call the trans service get resp
             translation.Language = text2Translate.ToLanguage;
             response = Request.CreateResponse(HttpStatusCode.OK, translation);
-            //response.Content = new StringContent(translation.Language, Encoding.UTF8, "application/json");
             return response;
         }
 
@@ -79,7 +74,6 @@ namespace Tutorial_API_New.Controllers
                 translation.Language = new LanguageClass(blobConnectionString, containerName).GetLanguageFromCode(languageCode);
 
                 response = Request.CreateResponse(HttpStatusCode.OK, translation);
-                //response.Content = new StringContent(translation.Language, Encoding.UTF8, "text/plain");
                 return response;
             }
             catch (Exception e)

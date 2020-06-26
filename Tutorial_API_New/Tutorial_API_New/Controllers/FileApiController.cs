@@ -26,7 +26,7 @@ namespace Tutorial_API_New.Controllers
             //Create HTTP Response.
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
             // now get the file
-            string fileContents = new LanguageService.LanguageClass(blobConnectionString, containerName).DownloadFileFromBlob(fileName);            
+            string fileContents = new LanguageClass(blobConnectionString, containerName).DownloadFileFromBlob(fileName);            
 
             response.Content = new StringContent(fileContents);
             return response;
@@ -35,7 +35,7 @@ namespace Tutorial_API_New.Controllers
         [Route("api/fileapi/postfile")]
         public HttpResponseMessage Post([FromBody] FileSave fileSave)
         {
-            new LanguageService.LanguageClass(blobConnectionString, containerName).UploadFileToBlob(fileSave.FileName, fileSave.FileContents);
+            new LanguageClass(blobConnectionString, containerName).UploadFileToBlob(fileSave.FileName, fileSave.FileContents);
 
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
 
