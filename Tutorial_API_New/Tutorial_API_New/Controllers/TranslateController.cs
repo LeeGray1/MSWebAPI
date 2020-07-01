@@ -100,12 +100,14 @@ namespace Tutorial_API_New.Controllers
         }
 
         [HttpPost]
-        [Route("api/gettranslation/update")]
-        public async Task<HttpResponseMessage> UpdateTranslationPost([FromBody] UpdateTranslation update)
+        [Route("api/translate")]
+        public async Task<HttpResponseMessage> UpdateTranslationPost([FromBody] ToTranslate toTranslate)
         {
             HttpResponseMessage response;
-            string newTranslation = await new LanguageClass(blobConnectionString, containerName).UpdateTranslation(update.SelectedWord, update.Language, update.TranslatedWord);
-            response = Request.CreateResponse(HttpStatusCode.OK, newTranslation);
+            // var translation = await languageClass.translate(textToTranslate, ToLanguageComboBox.Text, fromLanguage);
+            string newTranslation = await new LanguageClass(blobConnectionString, containerName).translate(toTranslate.TextToTranslate, toTranslate.ToLanguage, toTranslate.FromLanguage);
+            response = Request.CreateResponse(HttpStatusCode.OK);
+            response.Content = new StringContent(newTranslation, Encoding.UTF8, "text/plain");
             return response;
         }
     }
