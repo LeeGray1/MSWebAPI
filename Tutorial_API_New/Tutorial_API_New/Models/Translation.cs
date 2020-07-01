@@ -18,4 +18,11 @@ namespace Tutorial_API_New
         public string FromLanguage { get; set; }
         public string TextToTranslate { get; set; }
     }
+
+    public class UpdateTranslation
+    {
+        public string Language { get; set; }
+        public string SelectedWord { get; set; }
+        public string TranslatedWord { get; set; }
+    }
 }
