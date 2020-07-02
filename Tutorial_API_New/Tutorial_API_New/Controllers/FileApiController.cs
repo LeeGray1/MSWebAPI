@@ -1,5 +1,6 @@
 ﻿using LanguageService;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -39,6 +40,27 @@ namespace Tutorial_API_New.Controllers
 
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
 
+            return response;
+        }
+        [HttpDelete]
+        [Route("api/fileapi/deletefile")]
+        public HttpResponseMessage DeleteFile(string fileName)
+        {
+            bool result = new LanguageService.LanguageClass(blobConnectionString, containerName).DeleteFileFromBlob(fileName);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
+            if (result == false)
+            {
+                response = Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+            return response;
+        }
+
+        [HttpDelete]
+        [Route("api/fileapi/deletexslt")]
+        public HttpResponseMessage DeleteXsltFile(string language)
+        {
+            List<string> list = new LanguageService.LanguageClass(blobConnectionString, containerName).DeleteXsltFile(language);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, list, "Application/Json");
             return response;
         }
         #endregion

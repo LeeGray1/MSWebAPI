@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial_API_New", "Tutorial_API_New\Tutorial_API_New.csproj", "{E5056B45-5995-4D04-9362-34D236880CC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "New_API", "Tutorial_API_New\New_API.csproj", "{E5056B45-5995-4D04-9362-34D236880CC1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageService", "..\..\LeeGray1\MSTranslator\LanguageService\LanguageService.csproj", "{B7690533-0ECD-4F24-A88A-BE1AB4EFE8FE}"
 EndProject
